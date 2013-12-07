@@ -1,3 +1,3 @@
-require "assets/ztree/engine"
+require "assets/rails/engine"
 require "exts/hash"
 require "exts/array"

@@ -1,13 +1,11 @@
 # -*- encoding: utf-8 -*-
 
-require File.expand_path('../lib', __FILE__)
-
 Gem::Specification.new do |s|
-  s.name = 'ztree-rails'
-  s.version = '0.0.1'
+  s.name = 'ztree'
+  s.version = '0.0.2'
   s.authors = ['Zhimeng Sun']
   s.email = ['zhimengSun@gmail.com']
-  s.homepage = 'https://github.com/zhimengSun/ztree-rails'
+  s.homepage = 'https://github.com/zhimengSun/ztree'
   s.summary = 'ztree for rails, Extractive common action and helper'
   s.description = 'ztree for rails, Extractive common action and helper'
 

@@ -1,5 +1,5 @@
 module Assets
-  module Ztree
+  module Rails 
     class Engine < ::Rails::Engine
     end
   end
