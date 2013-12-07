@@ -1,6 +1,17 @@
+require "rails"
 require "exts/hash"
 require "exts/array"
 require "assets/rails/engine"
 require "ztree/sort_tree"
-require "ztree/railtie"
+require "ztree/controller"
+require "ztree/helpers"
+
+module Ztrr
+  autoload :Controller, 'ztree/controller'
+end
+
+class ActionController::Base
+  include Ztree::Controller 
+end
+
 ActiveRecord::Base.send :include, SortTree
