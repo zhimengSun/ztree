@@ -1,6 +1,11 @@
 module Ztree
   module Controller
-    extend ActiveSupport::Concern
+    # extend ActiveSupport::Concern
+    
+    module ClassMethods
+      '......'
+    end
+
     def get_tree
       mo_str = params[:model_name]
       ztree_name = params[:ztree_name] || 'name'
@@ -29,14 +34,3 @@ module Ztree
   end 
 end
 
-# module Ztree
-#   class Railtie < Rails::Railtie
-#     initializer "ztree.action_controller" do
-#       ActiveSupport.on_load(:action_controller) do
-#         # include Ztree::Controller
-#         ActionController::Base.send :include, Ztree::Controller 
-#       end
-#     end
-#   end
-# end
- 
