@@ -28,6 +28,6 @@ class Array
   end
 
   def to_sorted_nodes
-    self.group_by(&:parent_id).each {|k,v| v.sort_by! &:order_num}.to_a.flatten.select{|c| !c.is_a?Integer}.compact
+    self.group_by(&:parent_id).each {|k,v| v.sort_by! {|a| a.respond_to?(:order_num) ? :order_num : nil }}.to_a.flatten.select{|c| !c.is_a?Integer}.compact
   end
 end

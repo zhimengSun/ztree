@@ -21,6 +21,10 @@ module SortTree
     def order_column
       :order_num
     end
+
+    def to_sorted_nodes(c = '')
+      where(c).group_by(&:parent_id).each {|k,v| v.sort_by! &(order_column.to_sym)}.to_a.flatten.select{|c| !c.is_a?Integer}.compact
+    end
   end
   
   def sorted_children
