@@ -32,7 +32,7 @@ module SortTree
   end
 
   def update_order(num)
-    update_attribute(ActiveRecord::Base.order_column, num)
+    update_attribute(self.class.order_column, num)
   end
 
   def update_sorted_numbers(numbers)

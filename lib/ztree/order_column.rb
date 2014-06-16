@@ -1,8 +1,16 @@
-module Ztree
-  class << ActiveRecord::Base
+class << ActiveRecord::Base
+  def ztrees(opts = {}) # 暂时简单实现
     cattr_accessor :order_column
-    def order_column(c = :order_number) # 暂时简单实现
-      self.order_column = c
+    self.order_column = opts[:order_column] || :order_number
+  end
+end
+
+ActiveSupport.on_load :active_record do
+  if ActiveRecord::Base.respond_to?(:has_ancestry)
+    class << ActiveRecord::Base
+      def order_column
+        :order_number
+      end
     end
   end
 end
