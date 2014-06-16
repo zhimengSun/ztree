@@ -32,11 +32,19 @@ module SortTree
   end
 
   def update_order(num)
-    update_attribute(:order_num, num)
+    update_attribute(ActiveRecord::Base.order_number, num)
   end
 
   def update_sorted_numbers(numbers)
     return false if numbers.size != children.size
     self.class.update_sorted_numbers(numbers)
   end
+
+  class << ActiveRecord::Base
+    cattr_accessor :order_column
+    def order_column(c = :order_number) # 暂时简单实现
+      self.order_column = c
+    end
+  end
+
 end
