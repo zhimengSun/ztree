@@ -17,10 +17,14 @@ module SortTree
     def all_parents
       all.select {|c| c.has_children? || c.ancestry.nil?}
     end
+
+    def order_column
+      :order_num
+    end
   end
   
   def sorted_children
-    children.sort_by{|c| c.order_num}
+    children.sort_by{|c| c.send(self.class.order_column)}
   end
 
   def sorted_children_ids
