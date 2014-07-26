@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'ztree'
-  s.version = '0.0.6'
+  s.version = '0.0.7'
   s.authors = ['Zhimeng Sun']
   s.email = ['zhimengSun@gmail.com']
   s.homepage = 'https://github.com/zhimengSun/ztree'
